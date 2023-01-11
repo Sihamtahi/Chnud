@@ -8,8 +8,8 @@ import "./assets/main.css";
 import "./assets/base.css";
 
 const app = createApp(App);
-
-app.use(createPinia());
+// the use function allow us to register a plugin
+app.use(createPinia()); // THIS
 app.use(router);
 
 app.mount("#app");
