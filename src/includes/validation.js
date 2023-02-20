@@ -29,6 +29,6 @@ export default {
     defineRule("min_value", minVal);
     defineRule("max_value", maxVal);
     defineRule("confirmed", confirmed);
-    defineRule("not_one_of", excluded);
+    defineRule("excluded", excluded);
   },
 };
