@@ -8,6 +8,8 @@ import veeValidatePlugin from "./includes/validation";
 import "./assets/main.css";
 import "./assets/base.css";
 
+import "./includes/firebase";
+
 const app = createApp(App);
 // the use function allow us to register a plugin
 app.use(createPinia()); // THIS
