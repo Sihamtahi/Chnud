@@ -2,6 +2,7 @@
 
 import firebase from "firebase/app";
 import "firebase/auth";
+import "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -13,4 +14,11 @@ const firebaseConfig = {
   appId: "1:316588170517:web:61b7f3a6ca4373e08b1d1c", //Multiple App to connect to the project
 };
 
-export default firebase.initializeApp(firebaseConfig);
+//Initialise the app
+firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+const db = firebase.firestore();
+const userCollection = db.collection("users");
+
+export { auth, db, userCollection };

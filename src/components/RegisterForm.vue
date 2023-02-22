@@ -70,6 +70,18 @@
       />
       <ErrorMessage class="text-red-600" name="confirm_password" />
     </div>
+      <!--Job Title-->
+        <div class="mb3">
+      <label class="inline-block mb2"> Job</label>
+      <vee-field
+        type="text"
+        name="job"
+        class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
+        placeholder="Job Title"
+      />
+      <ErrorMessage class="text-red-600" name="job" />
+      
+    </div>
     <!-- Country -->
     <div class="mb-3">
       <label class="inline-block mb-2">Country</label>
@@ -85,6 +97,7 @@
       </vee-field>
       <ErrorMessage class="text-red-600" name="country" />
     </div>
+
     <!-- TOS -->
     <div class="mb-3 pl-6">
       <vee-field
@@ -107,7 +120,7 @@
 </template>
 
 <script>
-import firebase from "@/includes/firebase";
+import { auth, userCollection } from "@/includes/firebase";
 export default {
   name: "RegisterForm",
   data() {
@@ -120,6 +133,8 @@ export default {
         confirm_password: "password_mismatch:@password",
         country: "required|country_excluded:Antarctica",
         tos: "tos",
+        job:"required|alpha_spaces"
+         
       },
 
       userData: {
@@ -139,9 +154,28 @@ export default {
       this.reg_alert_message = "Please wait !Your account is being created.";
       let userCred = null;
       try {
-        userCred = await firebase
-          .auth()
-          .createUserWithEmailAndPassword(values.email, values.password);
+        userCred = await auth.createUserWithEmailAndPassword(
+          values.email,
+          values.password
+        );
+      } catch (error) {
+        console.log(values);
+        console.log(error);
+        this.reg_in_submission = false;
+        this.reg_alert_variant = "bg-red-500";
+        this.reg_alert_message = "An unxprected occured !  Plaese retry later";
+
+        return;
+      }
+
+      try {
+        await userCollection.add({
+          name: values.name,
+          email: values.email,
+          age: values.age,
+          country: values.country,
+          job: values.job,
+        });
       } catch (error) {
         console.log(values);
         console.log(error);
