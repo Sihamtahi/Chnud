@@ -32,5 +32,15 @@ export default defineStore("user", {
       await auth.signInWithEmailAndPassword(values.email, values.password);
       this.userLoggedIn = true;
     },
+    async signOut() {
+      if (auth == null) {
+        console.log("Nulll Here !");
+      } else {
+        console.log("Not Nulll Here !");
+      }
+
+      await auth.signOut();
+      this.userLoggedIn = false;
+    },
   },
 });
