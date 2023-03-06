@@ -155,7 +155,7 @@ export default {
       this.reg_alert_variant = "bg-blue-500";
       this.reg_alert_message = "Please wait !Your account is being created.";
       try {
-      await this.createUser(values)
+        await this.createUser(values);
       } catch (error) {
         console.log(values);
         console.log(error);

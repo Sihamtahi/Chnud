@@ -71,7 +71,7 @@ export default {
         this.login_in_submission = false;
         this.login_alert_variant = "bg-red-500";
         this.login_alert_message = "Invalid Login details.";
-        return; 
+        return;
       }
 
       this.login_alert_variant = "bg-green-500";

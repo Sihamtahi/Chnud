@@ -22,7 +22,7 @@ export default {
 
 <template>
   <app-header></app-header>
-<router-view></router-view>
+  <router-view></router-view>
 
   <!-- Player -->
   <div class="fixed bottom-0 left-0 bg-white px-4 py-2 w-full">

@@ -19,8 +19,7 @@
               <a class="px-2 text-white" href="#">Manage</a>
             </li>
             <li>
-              <a class="px-2 text-white" href="#" 
-              @click ="userStore.signOut"
+              <a class="px-2 text-white" href="#" @click="userStore.signOut"
                 >Logout</a
               >
             </li>
