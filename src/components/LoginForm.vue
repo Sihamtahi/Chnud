@@ -7,7 +7,6 @@
     {{ login_alert_message }}
   </div>
   <vee-form :validation-schema="loginSchema" @submit="login">
-    <!-- Email -->
     <div class="mb-3">
       <label class="inline-block mb-2">Email</label>
       <vee-field
