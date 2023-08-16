@@ -14,11 +14,11 @@
         <!-- Primary Navigation -->
         <ul class="flex flex-row mt-1">
           <!-- Navigation Links -->
-          <!-- <li>
+          <li>
             <router-link :to="{ name: 'about' }" class="px-2 text-white"
               >About</router-link
             >
-          </li> -->
+          </li>
           <li v-if="!userStore.userLoggedIn">
             <a class="px-2 text-white" href="#" @click.prevent="toggleAuthModel"
               >Login / Register</a

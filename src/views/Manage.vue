@@ -131,17 +131,20 @@
   </section>
 </template>
 <script>
-//import useUserStore from "@/stores/user";
+// import useUserStore from "@/stores/user";
 import AppUpload from "@/components/Upload.vue";
 export default {
   name: "manage",
   components: { AppUpload },
 
   // beforeRouteEnter(to, from, next) {
+  //   console.log("Hello dans 1");
   //   const store = useUserStore();
   //   if (store.userLoggedIn) {
+  //     console.log("Hello dans le if");
   //     next();
   //   } else {
+  //     console.log("Hello");
   //     next({ name: "home" });
   //   }
   // },
